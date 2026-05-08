@@ -54,4 +54,12 @@ function changePics() {
   //change color of background
   document.getElementById("rowone").style.backgroundColor = "orange";
   document.getElementById("rowtwo").style.backgroundColor = "blue";
+
+  //new class plus background yellow
+  let allBackgrounds = document.querySelectorAll(".place");
+  for (let o = 0; o < allBackgrounds.length; o++) {
+    if (!allBackgrounds[o].id) {
+      allBackgrounds[o].classList.add("yellow");
+    }
+  }
 }
