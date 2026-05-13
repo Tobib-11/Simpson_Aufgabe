@@ -30,7 +30,7 @@ function changePics() {
   ];
   const pics = document.querySelectorAll("img");
   for (let i = 0; i < pics.length; i++) {
-    pics[i].src = "./bilder/" + newPictures[i];
+    pics[i].src = "../bilder/" + newPictures[i];
   }
 
   // names bottom
@@ -61,5 +61,24 @@ function changePics() {
     if (!allBackgrounds[o].id) {
       allBackgrounds[o].classList.add("yellow");
     }
+  }
+  // onclick at pictures are pics chan  ged
+  let homerPic = document.querySelectorAll(
+    "#rowone .place img, #rowtwo .place img",
+  );
+  let notThere = false;
+  for (let i = 0; i < homerPic.length; i++) {
+    homerPic[i].onclick = function () {
+      for (let x = 0; x < homerPic.length; x++) {
+        if (homerPic[x] != this) {
+          if (notThere) {
+            homerPic[x].style.visibility = "visible";
+          } else {
+            homerPic[x].style.visibility = "hidden";
+          }
+        }
+      }
+      notThere = !notThere;
+    };
   }
 }
